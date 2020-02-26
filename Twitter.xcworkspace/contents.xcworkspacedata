@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Media.xcassets">
+      location = "group:twitter_assets">
    </FileRef>
    <FileRef
       location = "group:Twitter.xcodeproj">

@@ -16,14 +16,29 @@ class HomeTableTableViewController: UITableViewController {
     let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
+        print("viewDidLoad") // debugging
         super.viewDidLoad()
         loadTweets()
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
-    }
+        self.tableView.reloadData()
+        self.loadMoreTweets()
+       // self.tableView.rowHeight = UITableView.automaticDimension  // Monika tweetTable =? tableView
+       // self.tableView.estimatedRowHeight = 150
+    // Code was working without this update....
+        // per Monika - Favoriting a Tweet - 10:37 - 12:06
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear") // debugging
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+        self.loadMoreTweets()
+    }
+    
     @objc func loadTweets(){
-        
+        print("loadTweets") // debugging
         numberOfTweets = 20
         let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": numberOfTweets]
@@ -41,14 +56,12 @@ class HomeTableTableViewController: UITableViewController {
         }, failure: { (Error) in
             print("Could not retrieve tweets! oh no!")
         })
-    
     }
-
     
     func loadMoreTweets(){
-        
+        print("loadMoreTweets")
         let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        numberOfTweets = numberOfTweets + 20
+        numberOfTweets = numberOfTweets + 1 // limit loadMoreTweets from 20 to 1 to increase testing with Twitter API
         let myParams = ["count": numberOfTweets]
         
         TwitterAPICaller.client?.getDictionariesRequest(url: myURL, parameters: myParams as [String : Any], success: { (tweets: [NSDictionary]) in
@@ -93,6 +106,15 @@ class HomeTableTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
+        return cell
+        
+        // 17:24 Monika removes line I didn't have
+        //cell.tweet = tweetArray[indexPath.row]
+        // maybe I removed this during Dan's Instruction?
+        
         return cell
     }
     
@@ -106,7 +128,8 @@ class HomeTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return tweetArray.count
-    }
-
+       return tweetArray.count
+   }
+// line 115, 117, and 118 remove per Monika - Favoriting a Tweet - 10:37 - 12:06
+    // difference from her code to mine- Mine still shows the tweet- but not the tweet nor retweet icon
 }

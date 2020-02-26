@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -23,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func OnLoginButton(_ sender: Any) {
+        
         
         let myURL = "https://api.twitter.com/oauth/request_token"
         
