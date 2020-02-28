@@ -27,7 +27,7 @@ class TweetViewController: UIViewController {
     //    return newText.characters.count < characterLimit
         
         // Allow or disable the new text
-    }
+    //}
 
     override func viewDidLoad() {
         super.viewDidLoad()
