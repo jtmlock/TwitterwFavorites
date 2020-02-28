@@ -115,7 +115,7 @@ class HomeTableTableViewController: UITableViewController {
         //cell.tweet = tweetArray[indexPath.row]
         // maybe I removed this during Dan's Instruction?
         
-        return cell
+        //return cell
     }
     
     

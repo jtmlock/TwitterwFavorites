@@ -9,6 +9,25 @@
 import UIKit
 
 class TweetViewController: UIViewController {
+    
+ //   textView.delegate = self
+    
+ //   func textView(_ textView, shouldChangeTextIn range: NSRange, replacementText: String) -> Bool{
+        // TODO : Check the proposed new text character count
+        
+        // Set the max Character Limit
+  //      let characterLimit = 140
+        
+        // Construct what the new text would be if we allowed the user's latest edit
+  //      let newText = NSString(string: textView.text!).replacingCharacters(in: range, with: text)
+        
+        // Update Character count Label
+        
+        // The new text should be allowed? True/false
+    //    return newText.characters.count < characterLimit
+        
+        // Allow or disable the new text
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
