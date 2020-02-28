@@ -22,7 +22,7 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/jtmlock/TwitterwFavorites/blob/master02/TwitterWalkthroughwFavs.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 # Project 3 - *Twitter with Favorites*
 
@@ -49,5 +49,5 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/jtmlock/TwitterwFavorites/blob/master02/TwitterWalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
